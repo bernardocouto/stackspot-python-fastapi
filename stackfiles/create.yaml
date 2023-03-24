@@ -2,3 +2,4 @@ description: FastAPI
 inputs:
   project_name: "stackspot_python_fastapi"
 template: stackspot-python-fastapi/fastapi-template
+type: Backend
