@@ -45,7 +45,6 @@ hooks:
     trigger: after-render
 name: fastapi-plugin
 technologies:
-  - FastAPI
   - Python
 types:
   - app
