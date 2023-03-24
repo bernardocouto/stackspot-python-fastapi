@@ -1,0 +1,10 @@
+about: docs/about.md
+description: StackSpot Python FastAPI
+display-name: FastAPI
+category: Backend
+compatibility:
+  - Python
+name: stackspot-python-fastapi
+picture: stack.png
+technologies:
+  - Python

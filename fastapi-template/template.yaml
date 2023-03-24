@@ -1,0 +1,41 @@
+name: fastapi-template
+description: FastAPI Template
+global-computed-inputs:
+  project_description: "{{inputs.project_description}}"
+  project_name_normalized: "{{inputs.project_name|lower}}"
+  project_title: "{{inputs.project_title}}"
+  project_version: "{{inputs.project_version}}"
+hooks:
+  - type: run
+    commands:
+      - pip3 install poetry
+      - pip3 install virtualenv
+    trigger: before-input
+inputs:
+  - label: Project Author Email
+    default: project-author-email
+    name: project_author_email
+    type: text
+  - label: Project Author Name
+    default: project-author-name
+    name: project_author_name
+    type: text
+  - label: Project Description
+    default: project-description
+    name: project_description
+    type: text
+  - label: Project Name
+    default: project-name
+    name: project_name
+    type: text
+  - label: Project Title
+    default: project-title
+    name: project_title
+    type: text
+  - label: Project Version
+    default: "0.0.0"
+    global: true
+    name: project_version
+    type: text
+types:
+  - app-template

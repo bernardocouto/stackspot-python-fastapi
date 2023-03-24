@@ -1,0 +1,51 @@
+about: docs/about.md
+category: Backend
+compatibility:
+  - Python
+description: FastAPI Plugin
+display-name: FastAPI Plugin
+hooks:
+  - type: edit
+    changes:
+      - search:
+          string: "[tool.poetry.dependencies]"
+          replace-by:
+            snippet: "snippets/fastapi"
+          when:
+            not-exists: "fastapi"
+      - search:
+          string: "[tool.poetry.dev-dependencies]"
+          replace-by:
+            snippet: "snippets/pre-commit"
+          when:
+            not-exists: "pre-commit"
+      - search:
+          string: "[tool.poetry.dependencies]"
+          replace-by:
+            snippet: "snippets/pydantic"
+          when:
+            not-exists: "pydantic"
+      - search:
+          string: "[tool.poetry.dependencies]"
+          replace-by:
+            snippet: "snippets/python-dotenv"
+          when:
+            not-exists: "python-dotenv"
+      - search:
+          string: "[tool.poetry.dependencies]"
+          replace-by:
+            snippet: "snippets/uvicorn"
+          when:
+            not-exists: "uvicorn"
+    path: "pyproject.toml"
+    trigger: before-render
+  - type: run
+    commands:
+      - stk run env-create
+    trigger: after-render
+name: fastapi-plugin
+technologies:
+  - FastAPI
+  - Python
+types:
+  - app
