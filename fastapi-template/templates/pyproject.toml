@@ -1,0 +1,13 @@
+[tool.poetry]
+authors = [
+    "{{inputs.project_author_name}} <{{inputs.project_author_email}}>",
+]
+description = "{{inputs.project_description}}"
+name = "{{inputs.project_name}}"
+readme = "README.md"
+version = "{{inputs.project_version}}"
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+
+[tool.poetry.dev-dependencies]
